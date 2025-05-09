@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Usuário</title>	
+	</head>
+	<body>
+			<table border="1">
+				<tr>
+					<td>ID</td><tr><td th:text ="${usuario.cod}"></td>
+				</tr>
+				<tr>
+					<td>Nome</td><tr><td th:text ="${usuario.nomeUsuario}"></td>
+				</tr>
+				<tr>
+					<td>Sexo</td><tr><td th:text ="${usuario.sexo}"></td>
+				</tr>
+				<tr>
+					<td>Login</td><tr><td th:text ="${usuario.login}"></td>
+				<tr>
+					<td>Senha</td><tr><td th:text ="${usuario.senha}"></td>
+				</tr>
+			
+		</table>
+		
+	</body>
+</html>

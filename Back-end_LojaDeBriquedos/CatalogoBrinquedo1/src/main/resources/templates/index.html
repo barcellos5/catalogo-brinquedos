@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Aplicação Catálogo de Brinquedos">
+  <meta name="keywords" content="HTML, CSS, flexbox, JavaScript">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Brinquedos</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="script/script.js"></script>   
+</head>
+
+<body>
+  <header>
+    <div>
+      <img src="img/logoTeste.png" alt="Logo">
+    </div>
+    <div class="logo-name">
+      <h1>Catálogo de Brinquedos</h1>
+    </div>
+    <div class="login-area">
+      <input type="text" class="login-input" placeholder="Usuário">
+      <button class="login-button">Login</button>
+    </div>
+    <div class="menu-icon" onclick="toggleSidebar()">
+      &#9776; <!-- Unicode para o ícone de menu -->
+    </div>
+  </header>
+
+  <div style="display: flex;">
+    <div class="sidebar" id="sidebar">
+      <!-- Conteúdo da barra lateral -->
+      <ul>
+        <li><a href="index.html"><h4>HOME</h4></a></li>
+        <li><a href="index.html"><h4>CATEGORIAS</h4></a>
+        <ul>
+          <li><a href="index.html" onclick="carregarGaleria('todas')">Todas</a></li>
+          <li><a href="index.html" onclick="carregarGaleria('bonecas')">Bonecas</a></li>
+          <li><a href="index.html" onclick="carregarGaleria('caminhoes')">Caminhões</a></li>
+          <li><a href="index.html" onclick="carregarGaleria('cozinhas')">Cozinhas</a></li>
+          <li><a href="index.html" onclick="carregarGaleria('helicopteros')">Helicópteros</a></li>
+          <li><a href="index.html" onclick="carregarGaleria('jogos')">Jogos</a></li>
+          <li><a href="index.html" onclick="carregarGaleria('motos')">Motos</a></li>
+          <li><a href="index.html" onclick="carregarGaleria('Praia')">Praia</a></li>
+          <li><a href="index.html" onclick="carregarGaleria('tratores')">Tratores</a></li>
+        </ul></li>
+
+        <li><a href="produtos.html"><h4>PRODUTOS</h4></a>
+        <ul>
+          <li><a href="produtos_consutar.html">Consular Produto</a></li>
+          <li><a href="produtos_listar.html">Listar Produtos</a></li>
+        </ul></li>
+
+        <li><a href="areaAdministrativa.html"><h4>AREA ÁDMINISTRATIVA</h4></a>
+        <ul>
+          <li><a href="areaAdministrativa_inserir.html">Inserir Produto</a></li>
+          <li><a href="areaAdministrativa_alterar.html">Alterar Produto</a></li>
+          <li><a href="areaAdministrativa_excluir.html">Excluir Produto</a></li>
+        </ul></li>
+    </div>
+
+    <div class="main-content">
+      <!-- Conteúdo principal deve ser inserido aqui -->
+      <div class="flexbox">
+        <div class="main-content-item">
+          <a href="home.html">
+            <h2>Home</h2>
+            <p>Conteúdo da Home</p>
+          </a>
+        </div>
+        <div class="main-content-item">
+          <a href="produtos.html">
+            <h2>Produtos</h2>
+            <p>Conteúdo de Produtos</p>
+          </a>
+        </div>
+        <div class="main-content-item">
+          <a href="areaAdministrativa.html">
+            <h2>Área Administrativa</h2>
+            <p>Conteúdo da Área Administrativa</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Galeria de Produtos -->
+      <div class="product-gallery">
+        <div class="product">
+          <a href="DetalhesProduto.html">
+            <h3>Nome do produto</h3>
+            <img src="img/img1.jpg" alt="Produto 1">
+            <p>Descrição do Produto 1</p>
+            <p>R$ 000,00</p>
+          </a>
+        </div>
+        <div class="product">
+          <a href="DetalhesProduto.html">
+            <h3>Nome do produto</h3>
+            <img src="img/img2.jpg" alt="Produto 2">
+            <p>Descrição do Produto 2</p>
+            <p>R$ 000,00</p>
+          </a>
+        </div>
+        <div class="product">
+          <a href="DetalhesProduto.html">
+            <h3>Nome do produto</h3>
+            <img src="img/img7.jpg" alt="Produto 3">
+            <p>Descrição do Produto 3</p>
+            <p>R$ 000,00</p>
+          </a>
+        </div>
+        <div class="product">
+          <a href="DetalhesProduto.html">
+            <h3>Nome do produto</h3>
+            <img src="img/img10.jpg" alt="Produto 4">
+            <p>Descrição do Produto 4</p>
+            <p>R$ 000,00</p>
+          </a>
+        </div>
+        <div class="product">
+          <a href="DetalhesProduto.html">
+            <h3>Nome do produto</h3>
+            <img src="img/img12.jpg" alt="Produto 5">
+            <p>Descrição do Produto 5</p>
+            <p>R$ 000,00</p>
+          </a>
+        </div>
+        <div class="product">
+          <a href="DetalhesProduto.html">
+            <h3>Nome do produto</h3>
+            <img src="img/img3.jpg" alt="Produto 6">
+            <p>Descrição do Produto 6</p>
+            <p>R$ 000,00</p>
+          </a>
+        </div>
+        <div class="product">
+          <a href="DetalhesProduto.html">
+            <h3>Nome do produto</h3>
+            <img src="img/img0.jpg" alt="Produto 7">
+            <p>Descrição do Produto 7</p>
+            <p>R$ 000,00</p>
+          </a>
+        </div>
+        <div class="product">
+          <a href="DetalhesProduto.html">
+            <h3>Nome do produto</h3>
+            <img src="img/img9.jpg" alt="Produto 8">
+            <p>Descrição do Produto 8</p>
+            <p>R$ 000,00</p>
+          </a>
+        </div>
+        <div class="product">
+          <a href="DetalhesProduto.html">
+            <h3>Nome do produto</h3>
+            <img src="img/img11.jpg" alt="Produto 9">
+            <p>Descrição do Produto 9</p>
+            <p>R$ 000,00</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2023 Loja de brinquedos. Todos os direitos reservados.
+    <p><br>Adriana costa, Patrícia Barcellos.<br>
+      FATEC Itaquera "Professor Miguel Reale"<br>
+      Projeto Integrador: Loja de Briquedos<br>
+    Disciplinas: Desenvolvimento Wed III, Interação Humano Computador, Banco de Dandos Não Relacional</p>
+  </footer>
+  
+</body>
+</html>

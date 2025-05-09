@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Produtos</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #d8bfd8;
+            text-align: center;
+        }
+
+        header {
+            background-color: #6f4558;
+            color: white;
+            padding: 15px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #ddd;
+            border: none;
+            cursor: pointer;
+        }
+
+        #listaProdutos {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #604a8c;
+            background-color: #ffffe0;
+            text-align: left;
+        }
+
+        .produto {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Listagem de Produtos</h1>
+    <button onclick="listarProdutos()">Listar Produtos</button>
+</header>
+
+<div id="listaProdutos"></div>
+
+<script>
+    const produtos = [
+        { id: 1, nome: 'Produto 1', descricao: 'Descrição do Produto 1', preço: 'Preço do produto 1', categoria: 'Categoria do produto 1'  },
+        { id: 2, nome: 'Produto 2', descricao: 'Descrição do Produto 2', preço: 'Preço do produto 2', categoria: 'Categoria do produto 2'   },
+    ];
+
+    function listarProdutos() {
+        const listaProdutosDiv = document.getElementById('listaProdutos');
+        listaProdutosDiv.innerHTML = '';
+
+        if (produtos.length > 0) {
+            produtos.forEach(produto => {
+                const produtoDiv = document.createElement('div');
+                produtoDiv.classList.add('produto');
+                produtoDiv.innerHTML = `
+                    <p><strong>ID do Produto:</strong> ${produto.id}</p>
+                    <p><strong>Nome do Produto:</strong> ${produto.nome}</p>
+                    <p><strong>Descrição do Produto:</strong> ${produto.descricao}</p>
+                    <p><strong>Preço do Produto:</strong> ${produto.preço}</p>
+                    <p><strong>Categoria do Produto:</strong> ${produto.categoria}</p>
+                    <hr>
+                `;
+                listaProdutosDiv.appendChild(produtoDiv);
+            });
+        } else {
+            listaProdutosDiv.innerHTML = '<p>Nenhum produto encontrado.</p>';
+        }
+    }
+</script>
+
+</body>
+</html>

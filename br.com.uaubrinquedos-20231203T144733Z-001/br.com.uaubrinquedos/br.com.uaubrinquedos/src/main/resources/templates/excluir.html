@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Aplicação Loja de Brinquedos">
+  <meta name="keywords" content="HTML, CSS, flexbox, JavaScript">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja de Brinquedos</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="script.js"></script>   
+</head>
+
+<body>
+  <header>
+    <div>
+      <img src="img/logoTeste.png" alt="Logo">
+    </div>
+    <div class="logo-name">
+      <h1>Loja de Brinquedos</h1>
+    </div>
+    <div class="login-area">
+      <input type="text" class="login-input" placeholder="Usuário">
+      <button class="login-button">Login</button>
+    </div>
+    <div class="menu-icon" onclick="toggleSidebar()">
+      &#9776; 
+    </div>
+  </header>
+
+  <div style="display: flex;">
+    <div class="sidebar" id="sidebar">
+      
+      <ul>
+        <li><a href="index.html"><h4>HOME</h4></a></li>
+        <li><a href="index.html"><h4>CATEGORIAS</h4></a>
+        <ul>
+          <li><a href="index.html" onclick="carregarGaleria('todas')">Todas</a></li>
+          <li><a href="index.html" onclick="carregarGaleria('bonecas')">Bonecas</a></li>
+          <!-- Outras categorias aqui -->
+        </ul></li>
+
+        <li><a href="produtos.html"><h4>PRODUTOS</h4></a>
+        <ul>
+          <li><a href="produtos_consultar.html">Consultar Produto</a></li>
+          <li><a href="produtos_listar.html">Listar Produtos</a></li>
+        </ul></li>
+
+        <li><a href="area administrativa.html"><h4>ÁREA ÁDMINISTRATIVA</h4></a> 
+        <ul>
+          <li><a href="inserir.html" onclick="redirectToAdminPage('inserir')">Inserir Produto</a></li>
+          <li><a href="alterar.html" onclick="redirectToAdminPage('alterar')">Alterar Produto</a></li>
+          <li><a href="excluir.html" onclick="redirectToAdminPage('excluir')">Excluir Produto</a></li>
+        </ul>
+          
+        </ul></li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <div class="flexbox">
+        <!-- Conteúdo principal -->
+        <div class="main-content-item">
+          <a href="home.html">
+            <h2>Home</h2>
+            <p>Conteúdo da Home</p>
+          </a>
+        </div>
+        <div class="main-content-item">
+          <a href="produtos.html">
+            <h2>Produtos</h2>
+            <p>Conteúdo de Produtos</p>
+          </a>
+        </div>
+        <div class="main-content-item">
+          <a href="areaAdministrativa.html">
+            <h2>Área Administrativa</h2>
+            <p>Conteúdo da Área Administrativa</p>
+          </a>
+        </div>
+      </div>
+
+      
+      <div class="main-content-item">
+        <form>
+          <h2 style="color: #6f4558;">Excluir Produto</h2>
+
+          <label for="idProdutoExcluir">ID do Produto:</label>
+          <input type="text" id="idProdutoExcluir" name="idProdutoExcluir">
+
+          <p style="color: red;">Tem certeza que deseja excluir este produto?</p>
+
+          <button type="button" onclick="excluirProduto()">Excluir</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2023 Loja de brinquedos. Todos os direitos reservados.
+    <p><br>Adriana costa, Patrícia Barcellos.<br>
+      FATEC Itaquera "Professor Miguel Reale"<br>
+      Projeto Integrador: Loja de Briquedos<br>
+      Disciplinas: Desenvolvimento Wed III, Interação Humano Computador, Banco de Dandos Não Relacional</p>
+  </footer>
+  
+  <script>
+    function excluirProduto() {
+      var idProdutoExcluir = document.getElementById("idProdutoExcluir").value;
+      if (confirm("Tem certeza que deseja excluir o produto com o ID " + idProdutoExcluir + "?")) {
+        // Lógica para exclusão do produto aqui (substitua com sua lógica real)
+        alert("Produto excluído com sucesso!");
+      }
+    }
+  </script>
+</body>
+</html>

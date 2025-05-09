@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Alterar Produto">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alterar Produto</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="script/script.js"></script> 
+</head>
+
+<body>
+  <header>
+    <div>
+      <img src="img/logo.png" alt="Logo">
+    </div>
+    <div class="logo-name">
+      <h1>Uau Brinquedos</h1>
+    </div>
+    <div class="login-area">
+      <input type="text" class="login-input" placeholder="Usuário">
+      <button class="login-button">Login</button>
+    </div>
+    <div class="menu-icon" onclick="toggleSidebar()">
+      &#9776; 
+    </div>
+  </header>
+
+  <div style="display: flex;">
+    <div class="sidebar" id="sidebar">
+      <!-- Conteúdo da barra lateral -->
+      <ul>
+        <li><a href="index.html"><h4>HOME</h4></a></li>
+        <li><a href="index.html"><h4>CATEGORIAS</h4></a>
+        <ul>
+          <li><a href="index.html" onclick="carregarGaleria('todas')">Todas</a></li>
+          <li><a href="index.html" onclick="carregarGaleria('bonecas')">Bonecas</a></li>
+          <li><a href="index.html" onclick="carregarGaleria('caminhoes')">Caminhões</a></li>
+          <li><a href="index.html" onclick="carregarGaleria('cozinhas')">Cozinhas</a></li>
+          <li><a href="index.html" onclick="carregarGaleria('helicopteros')">Helicópteros</a></li>
+          <li><a href="index.html" onclick="carregarGaleria('jogos')">Jogos</a></li>
+          <li><a href="index.html" onclick="carregarGaleria('motos')">Motos</a></li>
+          <li><a href="index.html" onclick="carregarGaleria('Praia')">Praia</a></li>
+          <li><a href="index.html" onclick="carregarGaleria('tratores')">Tratores</a></li>
+        </ul></li>
+
+        <li><a href="pesquisaprodutos.html"><h4>PRODUTOS</h4></a>
+        <ul>
+          <li><a href="pesquisaprodutos.html">Consultar Produto</a></li>
+          <li><a href="listadeprodutos.html">Listar Produtos</a></li>
+        </ul></li>
+
+        <li><a href="administrativa.html"><h4>AREA ÁDMINISTRATIVA</h4></a>
+        <ul>
+          <li><a href="inserir.html">Inserir Produto</a></li>
+          <li><a href="alterar.html">Alterar Produto</a></li>
+          <li><a href="excluir.html">Excluir Produto</a></li>
+        </ul></li>
+    </div>
+
+    <div class="main-content">
+    
+      <div class="main-content-item">
+        <form>
+          <h2 style="color: #6f4558;">Alterar Produto</h2>
+
+          <label for="idProduto">ID do Produto:</label>
+          <input type="text" id="idProduto" name="idProduto">
+
+          <label for="novasInformacoes">Novas Informações:</label>
+          <input type="text" id="novasInformacoes" name="novasInformacoes">
+
+          <button type="button" onclick="alterarProduto()">Alterar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2023 Loja de brinquedos. Todos os direitos reservados.
+    <p><br>Adriana Costa, Artur Silvestre, Gabriel Possi, Higor Vieira, Patrícia Barcellos.<br>
+      FATEC Itaquera "Professor Miguel Reale"<br>
+      Projeto Integrador: Loja de Brinquedos<br>
+      Disciplinas: Desenvolvimento Web III, Interação Humano Computador, Banco de Dados Não Relacional</p>
+  </footer>
+</body>
+</html>

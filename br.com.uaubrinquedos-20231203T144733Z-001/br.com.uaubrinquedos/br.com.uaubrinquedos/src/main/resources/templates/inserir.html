@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Página de Inserção de Produtos">
+  <meta name="keywords" content="HTML, CSS, JavaScript, Abas, Formulário">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inserir Produto - Área Administrativa</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="script.js"></script>
+  
+  <style>
+    .tabs {
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .tabs li {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      background-color: #f2f2f2;
+    }
+
+    .tabs li:hover {
+      background-color: #ddd;
+    }
+
+    .tabs li.active {
+      background-color: #ccc;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+      
+<body>
+  
+    <header>
+        <div>
+          <img src="img/logoTeste.png" alt="Logo">
+        </div>
+        <div class="logo-name">
+          <h1>Área Administrativa - Loja de Brinquedos</h1>
+        </div>
+        <div class="login-area">
+          <input type="text" class="login-input" placeholder="Usuário">
+          <button class="login-button">Login</button>
+        </div>
+        <div class="menu-icon" onclick="toggleSidebar()">
+          &#9776; <!-- Unicode para o ícone de menu -->
+        </div>
+      </header>
+  
+
+  <div style="display: flex;">
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="index.html"><h4>HOME</h4></a></li>
+            <li><a href="index.html"><h4>CATEGORIAS</h4></a>
+            <ul>
+              <li><a href="index.html" onclick="carregarGaleria('todas')">Todas</a></li>
+              <li><a href="index.html" onclick="carregarGaleria('bonecas')">Bonecas</a></li>
+              <li><a href="index.html" onclick="carregarGaleria('caminhoes')">Caminhões</a></li>
+              <li><a href="index.html" onclick="carregarGaleria('cozinhas')">Cozinhas</a></li>
+              <li><a href="index.html" onclick="carregarGaleria('helicopteros')">Helicópteros</a></li>
+              <li><a href="index.html" onclick="carregarGaleria('jogos')">Jogos</a></li>
+              <li><a href="index.html" onclick="carregarGaleria('motos')">Motos</a></li>
+              <li><a href="index.html" onclick="carregarGaleria('Praia')">Praia</a></li>
+              <li><a href="index.html" onclick="carregarGaleria('tratores')">Tratores</a></li>
+            </ul></li>
+    
+            <li><a href="produtos.html"><h4>PRODUTOS</h4></a>
+            <ul>
+              <li><a href="produtos_consutar.html">Consular Produto</a></li>
+              <li><a href="produtos_listar.html">Listar Produtos</a></li>
+            </ul></li>
+    
+            <li><a href="area administrativa.html"><h4>AREA ÁDMINISTRATIVA</h4></a>
+            <ul>
+              <li><a href="inserir.html" onclick="redirectToAdminPage('inserir')">Inserir Produto</a></li>
+              <li><a href="alterar.html" onclick="redirectToAdminPage('alterar')">Alterar Produto</a></li>
+              <li><a href="excluir.html" onclick="redirectToAdminPage('excluir')">Excluir Produto</a></li>
+            </ul>
+    </div>
+
+    <div class="main-content">
+      <!-- Conteúdo principal, incluindo os formulários -->
+      <div class="flexbox">
+        <!-- Outros itens de conteúdo principal -->
+
+        <!-- Formulário para Inserir Produto -->
+        <div class="main-content-item">
+          <h2>Inserir Produto</h2>
+
+          <!-- Abas -->
+          <ul class="tabs">
+            <li class="tab-link" onclick="openTab('codigo')">Código</li>
+            <li class="tab-link" onclick="openTab('descricao')">Descrição</li>
+            <li class="tab-link" onclick="openTab('categoria')">Categoria</li>
+            <li class="tab-link" onclick="openTab('marca')">Marca</li>
+            <li class="tab-link" onclick="openTab('foto')">Foto</li>
+            <li class="tab-link" onclick="openTab('valor')">Valor</li>
+            <li class="tab-link" onclick="openTab('detalhes')">Detalhes</li>
+          </ul>
+
+          <!-- Conteúdo das Abas -->
+          <div id="codigo" class="tab-content active">
+            <!-- Conteúdo da aba Código -->
+            <label for="codigoProduto">Código do Produto:</label>
+            <input type="text" id="codigoProduto" name="codigoProduto">
+          </div>
+
+          <div id="descricao" class="tab-content">
+            <!-- Conteúdo da aba Descrição -->
+            <label for="descricaoProduto">Descrição do Produto:</label>
+            <textarea id="descricaoProduto" name="descricaoProduto"></textarea>
+          </div>
+
+          <div id="categoria" class="tab-content">
+            <!-- Conteúdo da aba Categoria -->
+            <label for="categoriaProduto">Categoria do Produto:</label>
+            <input type="text" id="categoriaProduto" name="categoriaProduto">
+          </div>
+
+          <div id="marca" class="tab-content">
+            <!-- Conteúdo da aba Marca -->
+            <label for="marcaProduto">Marca do Produto:</label>
+            <input type="text" id="marcaProduto" name="marcaProduto">
+          </div>
+
+          <div id="foto" class="tab-content">
+            <!-- Conteúdo da aba Foto -->
+            <label for="fotoProduto">Foto do Produto:</label>
+            <input type="file" id="fotoProduto" name="fotoProduto">
+          </div>
+
+          <div id="valor" class="tab-content">
+            <!-- Conteúdo da aba Valor -->
+            <label for="valorProduto">Valor do Produto:</label>
+            <input type="text" id="valorProduto" name="valorProduto">
+          </div>
+
+          <div id="detalhes" class="tab-content">
+            <!-- Conteúdo da aba Detalhes -->
+            <label for="detalhesProduto">Detalhes do Produto:</label>
+            <textarea id="detalhesProduto" name="detalhesProduto"></textarea>
+          </div>
+
+          <button type="button" onclick="submitForm()">Inserir Produto</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <!-- Conteúdo do rodapé -->
+  </footer>
+
+  <script>
+    function openTab(tabName) {
+      // Esconde todos os conteúdos das abas
+      var tabContents = document.getElementsByClassName('tab-content');
+      for (var i = 0; i < tabContents.length; i++) {
+        tabContents[i].classList.remove('active');
+      }
+
+      // Remove a classe 'active' de todas as abas
+      var tabLinks = document.getElementsByClassName('tab-link');
+      for (var i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].classList.remove('active');
+      }
+
+      // Exibe o conteúdo da aba clicada e marca a aba como ativa
+      document.getElementById(tabName).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+
+    function submitForm() {
+      // Implemente aqui a lógica para enviar o formulário
+      alert('Formulário enviado!');
+    }
+  </script>
+
+  <footer>
+    &copy; 2023 Loja de brinquedos. Todos os direitos reservados.
+    <p><br>Adriana costa, Patrícia Barcellos.<br>
+      FATEC Itaquera "Professor Miguel Reale"<br>
+      Projeto Integrador: Loja de Brinquedos<br>
+      Disciplinas: Desenvolvimento Web III, Interação Humano Computador, Banco de Dados Não Relacional</p>
+  </footer>
+</body>
+</html>

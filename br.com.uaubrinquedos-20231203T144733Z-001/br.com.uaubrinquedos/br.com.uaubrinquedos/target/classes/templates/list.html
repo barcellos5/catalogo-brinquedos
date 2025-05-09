@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Usuário</title>	
+	</head>
+	<body>
+	<table>
+		<h3>Lista de Usuarios</h3>
+		<a th:href="@{/usuarios/new}">Novo</a>
+			<table border="1">
+				<tr>
+					<th>ID</th>
+					<th>Nome</th>
+					<th>Sexo</th>
+					<th>Login</th>
+					<th>Senha</th>
+				</tr>
+				<tr th:each=" usuario:${usuarios}">
+					<td th:text="${usuario.cod}"></td>
+					<td><a href="@{/usuarios/{/id}(id=${usuario.cod})}"th:text="${usuario.nomeUsuario}"></a></td> 
+					<td th:text="${usuario.sexo}"></td>
+					<td th:text="${usuario.login}"></td>
+					<td th:text="${usuario.senha}"></td>
+					<td>
+						<a href="@{/usuarios/{/id}/edit (id=${usuario.cod})}">editar</a>
+						<a href="@{/usuarios/{/id}/delete (id=${usuario.cod})}">excluir</a>
+					</td>
+				</tr>
+	
+		</table>
+		
+	</body>
+</html>
